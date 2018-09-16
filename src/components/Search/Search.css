@@ -1,0 +1,52 @@
+#searchSection {
+    border: solid 1px #AAA;
+    width: 75%;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    padding-bottom: 50px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#searchHeaderContainer {
+    width: 100%;
+    border-bottom: 1px #EEE solid;
+    padding: 10px;
+}
+
+#searchHeader {
+    font-size: 30px;
+    font-family: 'Abril Fatface', cursive;
+}
+
+form {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+}
+
+input {
+    text-align: center;
+}
+
+.form-group {
+    margin: 20px;
+}
+
+#dash {
+    margin-top: 25px;
+}
+
+.submitButton {
+    margin-top: 25px;
+    background-color: #AAA;
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+
+    transition: all 1s;
+}
+
+.submitButton:hover {
+    background-color: #777;
+}

@@ -1,0 +1,40 @@
+#articlePod {
+    border: 1px #EEE solid;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#articleLeft {
+    float: left;
+    width: 80%;
+}
+
+#articleRight {
+    float: right;
+    width: 20%;
+}
+
+.topResult {
+    background-color: #EEE;
+    padding: 10px;
+}
+
+.bottomResult {
+    padding: 10px;
+}
+
+.save {
+    background-color: rgb(133, 238, 133);
+    color: black;
+
+    transition: all 1s;
+}
+
+.save:hover {
+    background-color: rgb(86, 158, 86);
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+

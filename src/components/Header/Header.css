@@ -1,0 +1,29 @@
+#header {
+    width: 100%;
+    padding: 25px;
+    background-image: linear-gradient(#EEE, #AAA);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#nytLogo {
+    text-align: center;
+    width: 35%;
+    margin-bottom: 15px;
+}
+
+#headerText {
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    font-family: 'Abril Fatface', cursive;
+    margin-bottom: 25px;
+}
+
+#headerText2 {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+    font-family: 'Roboto Slab', serif;
+    font-style: italic;
+    letter-spacing: 2px;
+}
