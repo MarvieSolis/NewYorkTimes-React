@@ -31,10 +31,10 @@ With ReactJS, the site is created using 5 main components. These components are 
 ## Technologies Used
 - [ReactJS](https://reactjs.org/): Used to create the client-side funcitonality such as the HTML, CSS, page layout, and site components.
 - [Bootstrap](https://getbootstrap.com/): Used to assist in establishing a uniform layout throughout the site.
-- [MongoDB](): Used to store articles saved, storing articles from the New York Times API, to the MongoDB database.
-- [Express](): Used within Node to set up routes to execute backend funtionality such as Creating Reading, Updating, and Deleting from the database.
-- [Node](): Used to create a connection between the site, server, and New York Times API.
-- [Axios](): Used within Node to perform the GET, POST, and DELETE requests.
+- [MongoDB](https://www.mongodb.com/): Used to store articles saved, storing articles from the New York Times API, to the MongoDB database.
+- [Express](https://expressjs.com/): Used within Node to set up routes to execute backend funtionality such as Creating Reading, Updating, and Deleting from the database.
+- [Node](https://nodejs.org/en/): Used to create a connection between the site, server, and New York Times API.
+- [Axios](https://www.npmjs.com/package/axios): Used within Node to perform the GET, POST, and DELETE requests.
 - [New York Times API](https://developer.nytimes.com/)
 
 
