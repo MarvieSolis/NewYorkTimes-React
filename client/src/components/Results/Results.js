@@ -4,19 +4,7 @@ import './Results.css';
 
 class Results extends Component {
 
-    renderArticles = () => {
-        return this.state.articles.map(article => (
-            <Results
-                _id={article._id}
-                key={article._id}
-                title={article.headline.main}
-                date={article.pub_date}
-                url={article.web_url}
-                handleSaveButton={this.handleSaveButton}
-                getSavedArticles={this.getSavedArticles}
-            />
-        ));
-    }
+
 
     render() {
         return (
@@ -25,10 +13,7 @@ class Results extends Component {
                     <h2 id="searchHeader">Results</h2>
                 </div>
 
-                <ResultsArticles 
-                renderArticles={this.renderArticles}
-                />
-
+                {console.log(this.state)}
 
             </div>
         );

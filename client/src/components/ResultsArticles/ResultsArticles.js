@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 import './ResultsArticles.css';
 
 
-const ResultsArticles = props =>
-
+class ResultsArticles extends Component {
+  render() {
+    return(
       <div id="articlePod" className="container">
 
         <div className="row justify-content-between topResult">
-            <span className="articleLeft"><p><strong>{props.title}</strong></p></span>
-            <span className="articleRight">
-                <button className="btn save" onClick={() => props.handleSaveButton(props._id)}><i class="far fa-save"></i></button>
+            <span className="articleLeft col-sm-10"><p><strong>{this.props.title}</strong></p></span>
+            <span className="articleRight col-sm-2">
+                <button className="btn save" onClick={() => this.props.handleSaveButton(this.props._id)}><i className="far fa-save"></i></button>
             </span>
         </div>
         <div className="row bottomResult">
-            <p className="articleSummary">{props.date} - <a href={props.url} alt="article source">View Article</a></p>
+            <p className="articleSummary">{this.props.date} - <a href={this.props.url} alt="article source" target="_blank">View Article</a></p>
         </div>
       
 
       </div>
+    );
+  }
+}
+
 
 
 export default ResultsArticles;
