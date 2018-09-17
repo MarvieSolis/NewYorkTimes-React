@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './Search.css';
 import '../Results/Results.css';
+import '../Saved/Saved.css';
 import ResultsArticles from '../ResultsArticles/ResultsArticles';
+import SavedArticles from '../SavedArticles/SavedArticles';
 import API from "../../utils/api";
 
 class Search extends Component {
@@ -14,6 +16,10 @@ class Search extends Component {
         articles: [],
         saved: []
     };
+
+    componentDidMount() {
+        this.getSavedArticles()
+    }
 
     // Keep track of what user types into topic input so that input can be grabbed later
     handleTopicChange = (event) => {
@@ -53,7 +59,29 @@ class Search extends Component {
                 date={article.pub_date.substring(0, 10)}
                 url={article.web_url}
                 handleSaveButton={this.handleSaveButton}
-            // getSavedArticles={this.getSavedArticles}
+                getSavedArticles={this.getSavedArticles}
+            />
+        ));
+    }
+
+    getSavedArticles = () => {
+        API.getArticle()
+            .then((res) => {
+                this.setState({ saved: res.data });
+                console.log(this.state.saved);
+            });
+    }
+
+    renderSaved = () => {
+        return this.state.saved.map(save => (
+            <SavedArticles
+                _id={save._id}
+                key={save._id}
+                title={save.title}
+                date={save.date}
+                url={save.url}
+                handleDeleteButton={this.handleDeleteButton}
+                getSavedArticles={this.getSavedArticles}
             />
         ));
     }
@@ -68,7 +96,13 @@ class Search extends Component {
 
     }
 
-    
+    // When delete article button is clicked, remove article from db
+    handleDeleteButton = (id) => {
+        API.deleteArticle(id)
+            .then(this.getSavedArticles());
+    }
+
+
 
 
     render() {
@@ -112,6 +146,16 @@ class Search extends Component {
                     </div>
 
                     {this.renderArticles()}
+
+                </div>
+
+                <div id="savedSection" className="container">
+                    <div id="savedHeaderContainer" className="container-fluid">
+                        <h2 id="savedHeader">Saved</h2>
+                    </div>
+
+                    {this.renderSaved()}
+
 
                 </div>
             </div>
