@@ -17,26 +17,27 @@ class Search extends Component {
         saved: []
     };
 
+    // Load page with saved articles if they exist.
     componentDidMount() {
         this.getSavedArticles()
     }
 
-    // Keep track of what user types into topic input so that input can be grabbed later
+    // Grabbing user entered topic
     handleTopicChange = (event) => {
         this.setState({ topic: event.target.value });
     }
 
-    // Keep track of what user types into topic input so that input can be grabbed later
+    // Grabbing user entered start year
     handleStartYearChange = (event) => {
         this.setState({ startYear: event.target.value });
     }
 
-    // Keep track of what user types into topic input so that input can be grabbed later
+    // Grabbing user entered end year
     handleEndYearChange = (event) => {
         this.setState({ endYear: event.target.value });
     }
 
-    // When the search form submits, perform NYT api search with user input
+    // Performs search via New York Times API
     handleFormSubmit = (event) => {
         event.preventDefault();
         console.log("Getting NYT Articles");
@@ -50,6 +51,7 @@ class Search extends Component {
             });
     }
 
+    // Renders the results div for each article
     renderArticles = () => {
         return this.state.articles.map(article => (
             <ResultsArticles
@@ -64,6 +66,7 @@ class Search extends Component {
         ));
     }
 
+    // obtains saved articles from database
     getSavedArticles = () => {
         API.getArticle()
             .then((res) => {
@@ -72,6 +75,7 @@ class Search extends Component {
             });
     }
 
+    // Renders saved article divs on page
     renderSaved = () => {
         return this.state.saved.map(save => (
             <SavedArticles
@@ -86,7 +90,7 @@ class Search extends Component {
         ));
     }
 
-    // When save article button is clicked, add article to db
+    // Adds article into database
     handleSaveButton = (id) => {
         const findArticleByID = this.state.articles.find((el) => el._id === id);
         console.log("findArticleByID: ", findArticleByID);
@@ -96,7 +100,7 @@ class Search extends Component {
 
     }
 
-    // When delete article button is clicked, remove article from db
+    // Deletes article fromm database
     handleDeleteButton = (id) => {
         API.deleteArticle(id)
             .then(this.getSavedArticles());

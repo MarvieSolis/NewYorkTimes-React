@@ -6,8 +6,6 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const cors = require('cors');
 
-
-
 // Set up a default port, configure mongoose, configure our middleware
 const PORT = process.env.PORT || 3001;
 mongoose.Promise = bluebird;
@@ -37,11 +35,11 @@ var articlesController = require("./server/controllers/article-controller");
 var router = new express.Router();
 // Define any API routes first
 // Get saved articles
-router.get("/api/saved", articlesController.find);
+router.get("/api/articles", articlesController.find);
 // Save articles
-router.post("/api/saved", articlesController.insert);
+router.post("/api/articles", articlesController.insert);
 // delete saved articles
-router.delete("/api/saved/:id", articlesController.delete);
+router.delete("/api/articles/:id", articlesController.delete);
 // Send every other request to the React app
 router.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
@@ -65,5 +63,5 @@ mongoose.connect(db, function (error) {
 
 // Start the server
 app.listen(PORT, function () {
-  console.log(`Server now on port ${PORT}!`);
+  console.log(`Server is now listening on port ${PORT}!`);
 });
