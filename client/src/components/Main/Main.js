@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "../Header/Header";
 // import Saved from "../Saved/Saved";
 import Search from "../Search/Search";
-import API from "../../utils/api";
 
 class Main extends Component {
 

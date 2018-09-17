@@ -63,7 +63,9 @@ class Search extends Component {
         const findArticleByID = this.state.articles.find((el) => el._id === id);
         console.log("findArticleByID: ", findArticleByID);
         const newSave = { title: findArticleByID.headline.main, date: findArticleByID.pub_date, url: findArticleByID.web_url };
+        console.log(newSave);
         API.saveArticle(newSave);
+
     }
 
     
