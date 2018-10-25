@@ -9,15 +9,13 @@ class Main extends Component {
     render() {
         return (
 
-            <div className="container-fluid">
-                <div className="container-fluid">
-                    <Header />
-                    {/* Search Form and Results Section */}
-                    <Search />
+            <div className="mainApp">
+                <Header />
+                {/* Search Form and Results Section */}
+                <Search />
 
-                    {/* Saved Articles Section */}
-                    {/* <Saved /> */}
-                </div>
+                {/* Saved Articles Section */}
+                {/* <Saved /> */}
             </div>
 
         );

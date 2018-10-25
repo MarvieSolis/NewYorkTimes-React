@@ -1,12 +1,9 @@
 #resultsSection {
     border: solid 1px #AAA;
     background-color: white;
-    width: 75%;
-    border-radius: 10px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    padding-bottom: 50px;
+    width: 100%;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 20px;
 }
 
 #resultsHeaderContainer {

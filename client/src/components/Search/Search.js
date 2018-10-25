@@ -111,7 +111,7 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="container-fluid">
+            <div className="container-fluid mainApp">
                 <div id="searchSection" className="container" >
                     <div id="searchHeaderContainer" className="container-fluid">
                         <h2 id="searchHeader">Search</h2>
